@@ -5,8 +5,8 @@ Install [mono](https://www.mono-project.com/download/stable/)
 
 ## Compile and run
 ```
-$ $ fsharpc hello.fsx
-$ mono hello.exe
+$ $ fsharpc Hello.fsx
+$ mono Hello.exe
 Hello, F#
 ```
 
