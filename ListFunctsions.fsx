@@ -4,7 +4,7 @@ let zeroToFive = 0 :: oneToFive
 let zeroToSeven = zeroToFive @ [6;7]
 
 
-let rec sumList =
+let rec sumList xs =
     match xs with
     | [] -> 0
     | head :: tail -> head + sumList tail
@@ -12,6 +12,7 @@ let rec sumList =
 sumList [1;2;3;4]
 
 
+// Types can often be infered
 let rec prodList (xs : int list) =
     match xs with
     | [] -> 1
