@@ -18,3 +18,6 @@ yo
 val it : unit = ()
 ```
 
+## Resources
+Many examples are inspired and adapted from [F# for fun and profit](https://fsharpforfunandprofit.com/)
+
