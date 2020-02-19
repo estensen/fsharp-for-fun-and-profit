@@ -20,6 +20,15 @@ cube 2
 
 // Every multi parameter function can be converted into
 // a on parameter function
+// This is called partial application
 let add1 = (+) 1
 add1 2
+
+let name = "Håvard"
+printfn "Hello, %s" name
+
+(printfn "Hello, %s") name
+
+let hello = printfn "Hello, %s"
+hello name
 

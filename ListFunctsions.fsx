@@ -29,3 +29,9 @@ let sumOfSquares n =
     |> List.sum
 
 sumOfSquares 100
+
+
+let hello = printfn "Hello, %s"
+let names = ["Alice";"Bob";"Charlie"]
+names |> List.iter hello
+
