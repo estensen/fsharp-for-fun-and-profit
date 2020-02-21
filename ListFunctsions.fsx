@@ -34,7 +34,24 @@ let sumOfSquares n =
 sumOfSquares 100
 
 
+// Partial application
 let hello = printfn "Hello, %s"
 let names = ["Alice";"Bob";"Charlie"]
 names |> List.iter hello
 
+
+// Pairwise combiner
+type OrderLine = {Qty:int; Total:float}
+
+let orderLines = [
+    {Qty=1; Total=20.00}
+    {Qty=3; Total=45.05}
+    {Qty=10; Total=99.90}
+]
+
+let addPair line1 line2 =
+    let newQty = line1.Qty + line2.Qty
+    let newTotal = line1.Total + line2.Total
+    {Qty=newQty; Total=newTotal}
+
+orderLines |> List.reduce addPair
