@@ -11,6 +11,9 @@ let rec sumList xs =
 
 sumList [1;2;3;4]
 
+// Or use reduce
+[1;2;3;4] |> List.reduce (+)
+
 
 // Types can often be infered
 let rec prodList (xs : int list) =
