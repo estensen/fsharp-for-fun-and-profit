@@ -55,3 +55,14 @@ let addPair line1 line2 =
     {Qty=newQty; Total=newTotal}
 
 orderLines |> List.reduce addPair
+
+
+// Fold
+// Reduce has two weeknesses
+// 1. Throws exception if it is passed an empty list
+// 2. The type of the list must be the same as the return type
+// Instead of having a mutavle accumulator we can use fold
+
+let builder = List.fold (fun acc x -> acc + (string x)) "" [1;2;3;4;5]
+// "12345"
+
