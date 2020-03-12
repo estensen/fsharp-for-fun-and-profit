@@ -57,7 +57,7 @@ let addPair line1 line2 =
 orderLines |> List.reduce addPair
 
 
-// Fold
+// List.fold
 // Reduce has two weeknesses
 // 1. Throws exception if it is passed an empty list
 // 2. The type of the list must be the same as the return type
@@ -66,3 +66,15 @@ orderLines |> List.reduce addPair
 let builder = List.fold (fun acc x -> acc + (string x)) "" [1;2;3;4;5]
 // "12345"
 
+// The :: operator only allows prepending to a list, not appending
+// It is very inefficient to always copy the whole list when lists are immutable
+// Use List.foldback to traverse list in reverse order
+let map' f list =
+	let folder acc x =
+		let newElement = f x
+		newElement :: acc
+	List.fold folder [] list
+
+let times2 x = x * 2
+map' times2 [1..5]
+ 
